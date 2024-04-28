@@ -3,7 +3,15 @@
 <br> NIM         : 1227050030
 <br> Mata Kuliah : Praktikum Pemrograman Berorientasi Objek
 
+<br> Di bawah ini adalah contoh program untuk membedakan jenis hewan dengan menggunakan bahasa Java yang didalamnya terdapat konsep PBO yaitu sebagai berikut:
+<br> 1. Encapsulation
+<br> 2. Inheritance
+<br> 3. Polimorphism
+<br> 4. Interface atau Abstract
+
 ## Source Code
+```Java
+// Encapsulation (Kelas Hewan)
 class Hewan {
     private String nama;
     private int usia;
@@ -34,6 +42,7 @@ class Hewan {
     }
 }
 
+// Inheritance (Kelas Burung dan Anjing)
 class Burung extends Hewan {
     public Burung(String nama, int usia) {
         super(nama, usia);
@@ -56,11 +65,13 @@ class Anjing extends Hewan {
     }
 }
 
+// Interface (Kelas Peliharaan)
 interface Peliharaan {
     void makan();
     void bermain();
 }
 
+// Polimorphism (Implementasi Interface Peliharaan)
 class BurungPeliharaan extends Burung implements Peliharaan {
     public BurungPeliharaan(String nama, int usia) {
         super(nama, usia);
@@ -93,6 +104,7 @@ class AnjingPeliharaan extends Anjing implements Peliharaan {
     }
 }
 
+// Penggunaan Kelas dan Interface
 public class DemoEncapsulationInheritancePolimorphismInterface {
 
     public static void main(String[] args) {
@@ -110,3 +122,4 @@ public class DemoEncapsulationInheritancePolimorphismInterface {
         anjingPeliharaan.bermain();
     }
 }
+```
