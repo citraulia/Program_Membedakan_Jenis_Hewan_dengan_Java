@@ -1,1 +1,112 @@
-# Program_Membedakan_Jenis_Hewan_dengan_Java
+# Program Membedakan Jenis Hewan dengan Java
+<br> Nama        : CITRA AULIA
+<br> NIM         : 1227050030
+<br> Mata Kuliah : Praktikum Pemrograman Berorientasi Objek
+
+## Source Code
+class Hewan {
+    private String nama;
+    private int usia;
+
+    public Hewan(String nama, int usia) {
+        this.nama = nama;
+        this.usia = usia;
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public int getUsia() {
+        return usia;
+    }
+
+    public void setUsia(int usia) {
+        this.usia = usia;
+    }
+
+    public void bersuara() {
+        System.out.println("Suara hewan belum ditentukan");
+    }
+}
+
+class Burung extends Hewan {
+    public Burung(String nama, int usia) {
+        super(nama, usia);
+    }
+
+    @Override
+    public void bersuara() {
+        System.out.println(getNama() + " berkicau");
+    }
+}
+
+class Anjing extends Hewan {
+    public Anjing(String nama, int usia) {
+        super(nama, usia);
+    }
+
+    @Override
+    public void bersuara() {
+        System.out.println(getNama() + " menggonggong");
+    }
+}
+
+interface Peliharaan {
+    void makan();
+    void bermain();
+}
+
+class BurungPeliharaan extends Burung implements Peliharaan {
+    public BurungPeliharaan(String nama, int usia) {
+        super(nama, usia);
+    }
+
+    @Override
+    public void makan() {
+        System.out.println(getNama() + " sedang makan biji-bijian");
+    }
+
+    @Override
+    public void bermain() {
+        System.out.println(getNama() + " sedang bermain di sangkar");
+    }
+}
+
+class AnjingPeliharaan extends Anjing implements Peliharaan {
+    public AnjingPeliharaan(String nama, int usia) {
+        super(nama, usia);
+    }
+
+    @Override
+    public void makan() {
+        System.out.println(getNama() + " sedang makan dog food");
+    }
+
+    @Override
+    public void bermain() {
+        System.out.println(getNama() + " sedang bermain di taman");
+    }
+}
+
+public class DemoEncapsulationInheritancePolimorphismInterface {
+
+    public static void main(String[] args) {
+        BurungPeliharaan burungPeliharaan = new BurungPeliharaan("Kakatua", 5);
+        AnjingPeliharaan anjingPeliharaan = new AnjingPeliharaan("Budi", 3);
+
+        System.out.println("**Burung Peliharaan**");
+        burungPeliharaan.bersuara();
+        burungPeliharaan.makan();
+        burungPeliharaan.bermain();
+
+        System.out.println("\n**Anjing Peliharaan**");
+        anjingPeliharaan.bersuara();
+        anjingPeliharaan.makan();
+        anjingPeliharaan.bermain();
+    }
+}
